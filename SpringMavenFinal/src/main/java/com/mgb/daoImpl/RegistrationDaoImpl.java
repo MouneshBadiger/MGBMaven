@@ -4,6 +4,7 @@ import org.hibernate.NonUniqueResultException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.mgb.daos.IRegistrationDao;
@@ -18,8 +19,13 @@ public class RegistrationDaoImpl implements IRegistrationDao{
 		this.template = template;
 	}
 	public boolean registerUser(User register) {
-		template.save(register);
-		return true;  
+		//template.save(register);
+		SessionFactory sf=template.getSessionFactory();
+		Session session=sf.openSession();
+		Transaction tx=session.beginTransaction();
+		session.save(register);
+		tx.commit();
+ 		return true;  
 	}
 	public boolean checkDuplicate(User register) throws Exception {
 		try{
