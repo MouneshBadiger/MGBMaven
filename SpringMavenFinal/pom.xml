@@ -52,7 +52,6 @@
 	<artifactId>spring-orm</artifactId>
 	<version>4.2.5.RELEASE</version>
 </dependency>
-
 <dependency>
 	<groupId>org.springframework.security</groupId>
 	<artifactId>spring-security-core</artifactId>
@@ -68,7 +67,6 @@
 	<artifactId>spring-security-config</artifactId>
 	<version>4.0.4.RELEASE</version>
 </dependency>
-
 <dependency>
 	<groupId>org.apache.tiles</groupId>
 	<artifactId>tiles-jsp</artifactId>
@@ -94,8 +92,6 @@
 	<artifactId>tiles-template</artifactId>
 	<version>3.0.3</version>
 </dependency>
-
-
 <dependency>
 	<groupId>org.hibernate</groupId>
 	<artifactId>hibernate-core</artifactId>
@@ -106,8 +102,6 @@
 	<artifactId>hibernate-validator</artifactId>
 	<version>5.2.4.Final</version>
 </dependency>
-
-
 
 <dependency>
 	<groupId>org.springframework.security</groupId>
@@ -135,7 +129,23 @@
 	<artifactId>commons-fileupload</artifactId>
 	<version>1.2</version>
 </dependency>
-	
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-aop</artifactId>
+	<version>4.2.5.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+	<version>1.6.11</version>
+</dependency>
+
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjweaver</artifactId>
+	<version>1.6.11</version>
+</dependency>	
   
   </dependencies>
 </project>
