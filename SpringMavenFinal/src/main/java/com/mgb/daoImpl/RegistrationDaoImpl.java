@@ -29,6 +29,7 @@ public class RegistrationDaoImpl implements IRegistrationDao{
 		tx.commit();
 		session.close();
 		return true;  
+
 	}
 	public boolean checkDuplicate(String mobileNo,int userId) throws Exception {
 		Session session=null;
