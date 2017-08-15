@@ -17,21 +17,21 @@
 		    password-parameter="password"
 		    />
 		    <logout logout-url="/logout" logout-success-url="/login"/>
-		
-		
+		<csrf disabled="true"/>
 	</http>
-
 	<authentication-manager>
-		<authentication-provider>
-			<!-- <user-service>
+		<!-- <authentication-provider>
+			<user-service>
 				<user name="mgb" password="123" authorities="ROLE_USER" />
-			</user-service> -->
+			</user-service>
 			<jdbc-user-service data-source-ref="dataSource"
 			    users-by-username-query="select name,password,is_active from users where name=?"
 			    authorities-by-username-query="select name,role from users where name =?"
 			    />
-		</authentication-provider>
+		</authentication-provider> -->
+		 <authentication-provider user-service-ref="myUserDetailsService" />
 		
 	</authentication-manager>
+	
 	
 </beans:beans>

@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
  
  
-   <context:component-scan base-package="com.mgb.controllers"></context:component-scan>
+   <context:component-scan base-package="com.mgb.*"></context:component-scan>
    <aop:aspectj-autoproxy/>
    
      <bean id="viewResolver"  
@@ -52,15 +52,17 @@
         <property name="mappingResources">  
         <list>  
         <value>User.hbm.xml</value> 
-        <value>UserLogin.hbm.xml</value>  
+        <value>hbms/PaymentDefinition.hbm.xml</value>
+        <value>hbms/PaymentDetails.hbm.xml</value>
+        <value>hbms/subscriber.hbm.xml</value>  
         </list>  
         </property>  
           
         <property name="hibernateProperties">  
             <props>  
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>  
-                <prop key="hibernate.hbm2ddl.auto">update</prop>  
-                <prop key="hibernate.show_sql">true</prop>  
+               <!--  <prop key="hibernate.hbm2ddl.auto">update</prop> -->  
+              <!--   <prop key="hibernate.show_sql">true</prop>   -->
             </props>  
         </property>  
     </bean>  

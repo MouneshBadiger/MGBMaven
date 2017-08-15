@@ -2,6 +2,8 @@ package com.mgb.daoImpl;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
@@ -35,9 +37,23 @@ public class UserDaoImpl implements IUserDao {
 		List list= template1.findByNamedParam("from User bo where bo.isActive=1 and bo.email=:email and bo.userLogin.password=:pass", var, values);
 		return null;
 	}
-	public List<User> getAllUserInfo() {
+	public List<User> getAllUserInfo() throws Exception {
 		@SuppressWarnings("unchecked")
-		List<User> list=(List<User>) template1.find("from User bo where bo.isActive=1");
+		//List<User> list=(List<User>) template1.find("from User bo where bo.isActive=1");
+		Session session=null;
+		List<User> list=null;
+		try {
+			session=template1.getSessionFactory().openSession();
+			Query qury=session.createQuery("from User bo where bo.isActive=1");
+			list=qury.list();
+		} catch (Exception e) {
+			throw e;
+		}
+		finally {
+			if(session!=null){
+				session.close();
+			}
+		}
 		return list;
 	}
 	

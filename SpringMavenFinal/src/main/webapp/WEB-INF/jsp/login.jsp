@@ -20,7 +20,7 @@
 
 		<form name='loginForm'
 			action="<c:url value='/j_spring_security_check' />" method='POST'>
-			<h1 align="center">Login with Username and Password</h1> 
+			<h1 align="center">Login</h1> 
 			<table align="center">
 				<tr>
 					<td>User:</td>

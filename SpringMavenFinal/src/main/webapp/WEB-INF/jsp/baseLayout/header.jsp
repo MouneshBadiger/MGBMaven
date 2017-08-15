@@ -15,31 +15,25 @@
    <li><a href="<c:url value="/home" />">Home</a></li>
    <li class='active has-sub'><a href='#'>Products</a>
       <ul>
+         <li class='has-sub'><a href='#'>Subscriber Details</a>
+            <ul>
+               <li><a href='<c:url value="/admin/userInfo" />'>List all subscribers</a></li>
+                <li><a href='<c:url value="/admin/addSubscriber" />'>add new subscriber</a></li>
+            </ul>
+         </li>
          <li class='has-sub'><a href='#'>Product 1</a>
+            <%-- <ul>
+               <li><a href='<c:url value="/admin/openPaymentPage" />'>add payment</a></li>
+               <li><a href='#'>edit payment</a></li>
+            </ul> --%>
+         </li>
+        <!--  <li class='has-sub'><a href='#'>Product 2</a>
             <ul>
                <li><a href='#'>Sub Product</a></li>
                <li><a href='#'>Sub Product</a></li>
             </ul>
-         </li>
-         <li class='has-sub'><a href='#'>Product 2</a>
-            <ul>
-               <li><a href='#'>Sub Product</a></li>
-               <li><a href='#'>Sub Product</a></li>
-            </ul>
-         </li>
-          <li class='has-sub'><a href='#'>Product 3</a>
-            <ul>
-               <li><a href='#'>Sub Product</a></li>
-               <li><a href='#'>Sub Product</a></li>
-            </ul>
-         </li>
-          <li class='has-sub'><a href='#'>Product 4</a>
-            <ul>
-               <li><a href='<c:url value="/admin" />'>Admin</a></li>
-               <li><a href='<c:url value="/admin/userInfo" />'>List all users</a></li>
-               <li><a href='<c:url value="/admin/sendRequest" />'>Send Request to Other project</a></li>
-            </ul>
-         </li>
+         </li> -->
+         
          
       </ul>
    </li>
@@ -52,7 +46,7 @@
          
     </c:if>
  	 <c:if test="${sessionScope.SPRING_SECURITY_CONTEXT!=null }">
- 	 <li> <a href='<c:url value="/editProfile" />'> Edit Profile</a></li>
+ 	 <li> <a href='<c:url value="/editProfile"/>'> Edit Profile</a></li>
          <li> <a href='<c:url value="/logout" />'><sec:authentication property="principal.username"/> Logout</a></li>
     </c:if>
 </ul>

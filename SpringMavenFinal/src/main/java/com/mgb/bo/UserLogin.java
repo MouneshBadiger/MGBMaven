@@ -1,42 +1,28 @@
 package com.mgb.bo;
 
-import javax.validation.Valid;
+import java.util.Collection;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 
-import com.mgb.forms.User;
+public class UserLogin extends User{
+	public UserLogin(String username, String password, boolean enabled, boolean accountNonExpired,
+			boolean credentialsNonExpired, boolean accountNonLocked,
+			Collection<? extends GrantedAuthority> authorities) {
+		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+		// TODO Auto-generated constructor stub
+	}
 
-public class UserLogin {
 	private int id;
-	@Valid
-	private User user;
-	@NotEmpty(message="Please enter your password")
-	private String password;
-	private Boolean isLogedIn;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Boolean getIsLogedIn() {
-		return isLogedIn;
-	}
-	public void setIsLogedIn(Boolean isLogedIn) {
-		this.isLogedIn = isLogedIn;
-	}
+	
 	
 
 }

@@ -52,5 +52,13 @@
         <put-attribute name="title" value="Edit Profile" /> 
         <put-attribute name="body" value="/WEB-INF/jsp/editProfile.jsp" />  
     </definition> 
+     <definition name="addSubscriber" extends="base.definition">  
+        <put-attribute name="title" value="Payment" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/addSubsciber.jsp" />  
+    </definition> 
+     <definition name="openPayment" extends="base.definition">  
+        <put-attribute name="title" value="Payment" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/paymentPage.jsp" />  
+    </definition> 
      
 </tiles-definitions>

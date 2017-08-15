@@ -38,7 +38,7 @@ color:#880000  ;
 		<td valign="middle">
 			<div id="body" >
 			
-				<s:form action="registration" modelAttribute="register" method="post"> 
+				<s:form action="saveSubscriber" modelAttribute="subscriber" method="post"> 
 				<s:hidden path="id"/>
 				<table >
 					<tr><td colspan="2" style="color: red;"> <c:out value="${error}"></c:out></td></tr>
@@ -46,15 +46,10 @@ color:#880000  ;
 					<tr><td >Name:</td><td><s:input path="name" /></td><td class="errors"><s:errors path="name"/></td></tr>
 					<tr><td>Email:</td><td><s:input path="email" /></td><td class="errors" ><s:errors path="email"/></td></tr>
 					<tr><td>Mobile No:</td><td><s:input path="mobileNo" /></td><td class="errors"><s:errors path="mobileNo"/></td></tr>
-					<tr><td>Password:</td><td><s:input path="password" /></td><td class="errors"><s:errors path="password"/></td></tr>
-					<tr><td>Re Enter Password:</td><td><s:input path="rePassword" /></td><td class="errors"><s:errors path="rePassword"/></td></tr>
+					<tr><td>Adar Card No:</td><td><s:input path="adarCardNo" /></td><td class="errors"><s:errors path="adarCardNo"/></td></tr>
 					<tr><td>Date Of Birth:</td><td><s:input path="dob" id="datepicker" onkeyup="returnNull()"/></td><td class="errors"><s:errors path="dob"/></td></tr>
 					<tr><td>Address:</td><td><s:input path="address" /></td><td class="errors"><s:errors path="address"/></td></tr>
 					<tr><td>Gender:</td><td>Male<s:radiobutton path="gender"  value="male"/> Female<s:radiobutton path="gender" value="female"/> </td><td class="errors"><s:errors path="gender"/></td></tr>
-					<tr><td>Register as admin:</td><td><input type="checkbox" id="isAdminId"></td></tr>
-					<!-- <tr id="spPass"><td>special password</td><td><input type="text"></td></tr> -->
-					
-					<!-- <tr><td>Upload files1<input type="file" name="file2" multiple="multiple" ></td></tr> -->
 					
 					<tr><td align="right" colspan="3"><input type="submit" value="Submit"/> </td></tr>
 					

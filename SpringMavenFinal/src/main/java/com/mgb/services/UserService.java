@@ -2,15 +2,20 @@ package com.mgb.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.mgb.bo.UserLogin;
 import com.mgb.daoImpl.UserDaoImpl;
 import com.mgb.daos.IRegistrationDao;
 import com.mgb.daos.IUserDao;
+import com.mgb.forms.PaymentDetailsDTO;
 import com.mgb.forms.User;
-
+@Component
 public class UserService {
+	@Autowired
+	private PaymentService paymentService;
 	UserDaoImpl userDaoImpl;
 	private static volatile UserService service=null;
 	public static UserService getInstance(){
@@ -21,15 +26,17 @@ public class UserService {
 	}
 	//IUserDao userDao=new UserDaoImpl(); 
 	
-	public User getUser(ApplicationContext appContext, UserLogin userLogin) {
-		IUserDao userDao=(IUserDao) appContext.getBean("userDao");
-		User user=userDao.getUser(userLogin.getUser().getEmail(),userLogin.getPassword());
-		return user;
-	}
 
-	public List<User> getAllUserInfo() {
+	public List<User> getAllUserInfo() throws Exception {
 		IUserDao userDao=UserDaoImpl.getInstance();
 		List<User> userToList=userDaoImpl.getAllUserInfo();
+		//code added for setting pending amount for all users permamance may be effected
+		for (User user : userToList) {
+			PaymentDetailsDTO dto=paymentService.getPaymentDetailsDTO(String.valueOf(user.getId()));
+			user.setPendingAmount(dto.getTotalAmountPending());
+		}
+		//pending amount ends
+		
 		return userToList;
 	}
 

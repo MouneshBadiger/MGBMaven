@@ -8,6 +8,6 @@ public interface IUserDao {
 
 	User getUser(String email, String password);
 
-	List<User> getAllUserInfo();
+	List<User> getAllUserInfo() throws Exception;
 
 }

@@ -4,7 +4,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
   
 <hibernate-mapping>  
-<class name="com.mgb.forms.User" table="users">  
+<class name="com.mgb.forms.Subscriber" table="users">  
           <id name="id" type="int">
           <column name="id"/>
           <generator class="native"/></id>
@@ -17,6 +17,9 @@
           </property>
           <property name="mobileNo" type="string">
          	 <column name="mobile_no" length="15"></column>
+          </property>
+          <property name="adarCardNo" type="string">
+         	 <column name="adar_card_no" ></column>
           </property>
           <property name="address" type="string">
          	 <column name="address" ></column>
@@ -39,12 +42,8 @@
           <property name="isActive" >
          	 <column name="is_active" ></column>
           </property> 
-          
            <property name="role" >
          	 <column name="role" ></column>
-          </property>
-           <property name="password" >
-         	 <column name="password" ></column>
           </property>
            <property name="dob" >
          	 <column name="dob" ></column>
