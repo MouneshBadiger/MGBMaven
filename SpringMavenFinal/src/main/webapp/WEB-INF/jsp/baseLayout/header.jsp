@@ -6,9 +6,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+ <script src="<c:url value="/resources/jquery-1.11.3.min.js" />"></script>
+  <script src="<c:url value="/resources/jquery-ui.js" />"></script>
 </head>
 <body>
-<div style="font-size: xx-large;font-style: oblique;font-stretch: wider;" align="center" ><b>MGB Spring Pro</b></div>
+<div style=" font-size: xx-large;font-style: oblique;font-stretch: wider;font-family: cursive;color: maroon;" align="center" ><b>KALIKADEVI&nbsp;CABLE &nbsp;NETWORKS</b></div>
 
 <div id='cssmenu'>
 <ul>
@@ -18,14 +20,15 @@
          <li class='has-sub'><a href='#'>Subscriber Details</a>
             <ul>
                <li><a href='<c:url value="/admin/userInfo" />'>List all subscribers</a></li>
-                <li><a href='<c:url value="/admin/addSubscriber" />'>add new subscriber</a></li>
+                <li><a href='<c:url value="/admin/addSubscriber" />'>Add new subscriber</a></li>
+                <li><a href='<c:url value="/admin/paymentYearDetails" />'>View Balance Year wise</a></li>
             </ul>
          </li>
-         <li class='has-sub'><a href='#'>Product 1</a>
-            <%-- <ul>
-               <li><a href='<c:url value="/admin/openPaymentPage" />'>add payment</a></li>
-               <li><a href='#'>edit payment</a></li>
-            </ul> --%>
+         <li class='has-sub'><a href='#'>Manage</a>
+            <ul>
+               <li><a href='<c:url value="/admin/openPaymentDefPage" />'>Define Payement</a></li>
+                <li><a href='<c:url value="/admin/openAreaMaster" />'>Area Master</a></li>
+            </ul>
          </li>
         <!--  <li class='has-sub'><a href='#'>Product 2</a>
             <ul>

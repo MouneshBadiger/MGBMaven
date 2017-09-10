@@ -15,7 +15,7 @@
         <td height="120px"  style="border-bottom-style: solid;" id="header"><tiles:insertAttribute name="header"/></td>
     </tr>
     <tr>
-        <td valign="top"  style="padding: 40px;background-image: url('resources/images/light.jpg');background-size:cover;" height="500px"><tiles:insertAttribute name="body"/></td>
+        <td valign="top"  style="padding-left:40px; padding-right:40px;padding-top:20px; background-image: url('resources/images/light.jpg');background-size:cover;" height="500px"><tiles:insertAttribute name="body"/></td>
     </tr>
     <tr>
         <td  style="border-top-style: groove;"  height="30px" id="header" ><tiles:insertAttribute name="footer"/></td>

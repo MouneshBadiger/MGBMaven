@@ -17,19 +17,11 @@
   function returnNull(){
 	  return 0;
   }
-  function toggleIsAdmin(){
-		if($("#isAdminId").is(':checked')) 
-				$("#spPass").("display","block");
-				// checked 
-			else
-				 $("#txtAge").("display","none"); 
-		}
-  </script>
+
+</script>
 <title>Register</title>
 <style type="text/css">
-.errors{
-color:#880000  ;
-}
+
 </style>
 </head>
 <body >
@@ -44,16 +36,35 @@ color:#880000  ;
 					<tr><td colspan="2" style="color: red;"> <c:out value="${error}"></c:out></td></tr>
 					
 					<tr><td >Name:</td><td><s:input path="name" /></td><td class="errors"><s:errors path="name"/></td></tr>
-					<tr><td>Email:</td><td><s:input path="email" /></td><td class="errors" ><s:errors path="email"/></td></tr>
-					<tr><td>Mobile No:</td><td><s:input path="mobileNo" /></td><td class="errors"><s:errors path="mobileNo"/></td></tr>
-					<tr><td>Adar Card No:</td><td><s:input path="adarCardNo" /></td><td class="errors"><s:errors path="adarCardNo"/></td></tr>
-					<tr><td>Date Of Birth:</td><td><s:input path="dob" id="datepicker" onkeyup="returnNull()"/></td><td class="errors"><s:errors path="dob"/></td></tr>
-					<tr><td>Address:</td><td><s:input path="address" /></td><td class="errors"><s:errors path="address"/></td></tr>
+					<tr><td>Mobile No:</td><td><s:input  path="mobileNo" /></td><td class="errors"><s:errors path="mobileNo"/></td></tr>
+					<tr><td>Date Of Subscription:</td><td><s:input path="subscriberDetails.subscribedDate" id="datepicker" onkeyup="returnNull()"/></td><td class="errors"><s:errors path="subscriberDetails.subscribedDate"/></td></tr>
 					<tr><td>Gender:</td><td>Male<s:radiobutton path="gender"  value="male"/> Female<s:radiobutton path="gender" value="female"/> </td><td class="errors"><s:errors path="gender"/></td></tr>
+					<tr><td>Address:</td><td><s:textarea path="address"/></td><td class="errors"><s:errors path="address"/></td></tr>
+					<tr><td>Area:</td>
+						<td>
+							<s:select path="areaStrId">
+							<s:option value="">--select--</s:option>
+								<s:options items="${areaMap}"/>
+							</s:select> 
+						</td>
+						<td class="errors"><s:errors path="areaStrId"/></td>
+					</tr>
 					
-					<tr><td align="right" colspan="3"><input type="submit" value="Submit"/> </td></tr>
-					
-   					<%--  <c:set var="count" value="0"  ></c:set>
+					<tr><td>Previous Year Balance:</td><td><s:input path="subscriberDetails.balance" /></td><td class="errors"><s:errors path="subscriberDetails.balance"/></td></tr>
+					<tr><td>Adar Card No:</td><td><s:input path="adarCardNo" /></td><td class="errors"><s:errors path="adarCardNo"/></td></tr>
+					<tr><td>Email:</td><td><s:input path="email" /></td><td class="errors" ><s:errors path="email"/></td></tr>
+
+					<tr>
+						<td align="center" colspan="3">
+							<c:if test="${subscriber.id==0 }">
+								<input type="submit" value="Submit" />
+							</c:if> <c:if test="${subscriber.id>0 }">
+								<input type="submit" value="Update" />
+							</c:if>
+						</td>
+					</tr>
+
+							<%--  <c:set var="count" value="0"  ></c:set>
    					 <c:forEach var="i" items="${register.toList}" varStatus="status">
    					 	<tr><td colspan="2">
 							<input type="text" name="toList['${status.index}'].name" id="${status.index}" value='<c:out value="${register.toList[status.index].name}"></c:out>'>

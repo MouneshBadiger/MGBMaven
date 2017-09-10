@@ -110,7 +110,7 @@ public class RegistrationDaoImpl implements IRegistrationDao{
 		try {
 		 	SessionFactory sf=template.getSessionFactory();
 			session=sf.openSession();
-			Query query=session.createQuery("select bo from User bo where bo.name=:userName");
+			Query query=session.createQuery("select bo from User bo where bo.name=:userName and bo.isActive=1");
 			query.setString("userName", userName);
 			user=(User) query.uniqueResult();
 		} catch (Exception e) {

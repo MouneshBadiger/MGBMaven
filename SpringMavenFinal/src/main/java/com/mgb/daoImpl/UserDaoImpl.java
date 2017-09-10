@@ -44,7 +44,7 @@ public class UserDaoImpl implements IUserDao {
 		List<User> list=null;
 		try {
 			session=template1.getSessionFactory().openSession();
-			Query qury=session.createQuery("from User bo where bo.isActive=1");
+			Query qury=session.createQuery("from User bo where bo.isActive=1 and bo.role!='ROLE_ADMIN'");
 			list=qury.list();
 		} catch (Exception e) {
 			throw e;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC  
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+"http://hibernate.sourceforge.net/hibernate-mapping-4.0.dtd">  
   
 <hibernate-mapping>  
 <class name="com.mgb.forms.User" table="users">  
@@ -9,8 +9,8 @@
           <column name="id"/>
           <generator class="native"/></id>
           
-          <property name="name" type="string">
-         	 <column name="name" length="200"></column>
+          <property name="name" type="string" >
+         	 <column name="name" length="200"></column> 
           </property>
           <property name="email" type="string">
          	 <column name="email_id" length="100"></column>
@@ -49,7 +49,10 @@
            <property name="dob" >
          	 <column name="dob" ></column>
           </property>
-          
+           <many-to-one  name="subscriberDetails" class="com.mgb.bo.SubscriberDetails" lazy="false">
+				<column name="subscriber_id"></column>
+		 </many-to-one>
+		 
 </class>  
             
 </hibernate-mapping>  

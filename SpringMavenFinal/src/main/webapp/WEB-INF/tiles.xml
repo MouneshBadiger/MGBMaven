@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd"> 
 <tiles-definitions>
  <definition name="base.definition"  template="/WEB-INF/jsp/baseLayout/baseLayout.jsp">  
-        <put-attribute name="title" value="MGB Spring Pro" />  
+        <put-attribute name="title" value="Kalikadevi Cable Networks" />  
         <put-attribute name="header" value="/WEB-INF/jsp/baseLayout/header.jsp" />  
         <put-attribute name="menu" value="/WEB-INF/jsp/baseLayout/menu.jsp" />  
         <put-attribute name="body" value="" />  
@@ -12,7 +12,7 @@
     </definition>  
     
      <definition name="welcome" extends="base.definition">  
-        <put-attribute name="title" value="MGB Spring Project" /> 
+        <put-attribute name="title" value="Kalikadevi Cable Networks" /> 
         <put-attribute name="body" value="/WEB-INF/jsp/testBody.jsp" />  
     </definition>  
     
@@ -53,12 +53,27 @@
         <put-attribute name="body" value="/WEB-INF/jsp/editProfile.jsp" />  
     </definition> 
      <definition name="addSubscriber" extends="base.definition">  
-        <put-attribute name="title" value="Payment" /> 
+        <put-attribute name="title" value="Add Subscriber" /> 
         <put-attribute name="body" value="/WEB-INF/jsp/admin/addSubsciber.jsp" />  
     </definition> 
      <definition name="openPayment" extends="base.definition">  
         <put-attribute name="title" value="Payment" /> 
         <put-attribute name="body" value="/WEB-INF/jsp/admin/paymentPage.jsp" />  
     </definition> 
-     
+    <definition name="openPaymentDef" extends="base.definition">  
+        <put-attribute name="title" value="Payment Defition" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/paymentDefinition.jsp" />  
+    </definition>
+     <definition name="generateReportUserInfo" template="/WEB-INF/jsp/admin/generatePendingReport.jsp" >  
+    </definition>
+    <definition name="userInfoYearView" extends="base.definition">  
+        <put-attribute name="title" value="Payment Year" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/userInfoYearView.jsp" />  
+    </definition>
+      <definition name="areaMaster" extends="base.definition">  
+        <put-attribute name="title" value="Area Master" /> 
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/areaMaster.jsp" />  
+    </definition>
+     <definition name="printYearReport" template="/WEB-INF/jsp/admin/generateYearReport.jsp" >  
+    </definition>
 </tiles-definitions>

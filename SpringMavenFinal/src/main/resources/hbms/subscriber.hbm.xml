@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC  
-"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
   
 <hibernate-mapping>  
 <class name="com.mgb.forms.Subscriber" table="users">  
@@ -42,12 +42,18 @@
           <property name="isActive" >
          	 <column name="is_active" ></column>
           </property> 
-           <property name="role" >
+           <property name="role">
          	 <column name="role" ></column>
           </property>
            <property name="dob" >
          	 <column name="dob" ></column>
           </property>
+          <many-to-one  name="subscriberDetails"  class="com.mgb.bo.SubscriberDetails" lazy="false" cascade="all" >
+				<column name="subscriber_id"></column>
+		 </many-to-one>
+		   <many-to-one  name="areaId"  class="com.mgb.bo.AreaMaster" lazy="false" >
+				<column name="area_id"></column>
+		 </many-to-one>
           
 </class>  
             

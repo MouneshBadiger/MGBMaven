@@ -33,8 +33,9 @@
             </list>  
         </property>  
     </bean>  
- 
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+ 	<mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/admin/resources/**" location="/resources/" />
+    
  
     <mvc:annotation-driven />
    
@@ -54,7 +55,9 @@
         <value>User.hbm.xml</value> 
         <value>hbms/PaymentDefinition.hbm.xml</value>
         <value>hbms/PaymentDetails.hbm.xml</value>
-        <value>hbms/subscriber.hbm.xml</value>  
+        <value>hbms/subscriber.hbm.xml</value> 
+        <value>hbms/SubscriberDetails.hbm.xml</value> 
+        <value>hbms/AreaMaster.hbm.xml</value> 
         </list>  
         </property>  
           

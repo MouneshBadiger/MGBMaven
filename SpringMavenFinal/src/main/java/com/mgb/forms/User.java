@@ -4,11 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.mgb.bo.SubscriberDetails;
 import com.mgb.bo.UserLogin;
 
 
@@ -20,13 +24,14 @@ public class User {
 	@Email(message="Invalid email id")
 	private String email;
 	@NotEmpty(message="Mobile number can not be empty")
+	@Pattern(regexp="(^$|[0-9]{10})",message="Enter valid mobile number")
 	private String mobileNo;
 	@NotEmpty(message="Address can not be empty")
 	private String address;
 	@NotEmpty(message="Gender can not be empty")
 	private String gender;
 	//@NotEmpty(message="Date of birth can not be empty")
-	@DateTimeFormat(pattern="dd/MM/yyyy") 
+	//@DateTimeFormat(pattern="dd/MM/yyyy") 
 	private Date dob;
 	@NotEmpty(message="Please enter your password")
 	private String password;
@@ -43,6 +48,7 @@ public class User {
 	private String role;
 	private String pendingAmount="00";
 	private List<String> testList;
+	private SubscriberDetails subscriberDetails;
 	public User() {
 		
 	}
@@ -153,6 +159,12 @@ public class User {
 	}
 	public void setPendingAmount(String pendingAmount) {
 		this.pendingAmount = pendingAmount;
+	}
+	public SubscriberDetails getSubscriberDetails() {
+		return subscriberDetails;
+	}
+	public void setSubscriberDetails(SubscriberDetails subscriberDetails) {
+		this.subscriberDetails = subscriberDetails;
 	}
 	
 	

@@ -30,5 +30,6 @@ public class PaymentMonthlyDetailsDto {
 		this.amount = amount;
 	}
 	
+	
 
 }

@@ -318,4 +318,17 @@
 img {
    cursor: pointer;
 }
-
+.errors{
+color:#880000  ;
+}
+button, input[type="button"], input[type="submit"]  {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+     cursor: pointer;
+}

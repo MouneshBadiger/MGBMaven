@@ -20,8 +20,8 @@
 
 		<form name='loginForm'
 			action="<c:url value='/j_spring_security_check' />" method='POST'>
-			<h1 align="center">Login</h1> 
-			<table align="center">
+			<div style="padding-left: 80px"" align="center"><h3 >Login</h3> </div>
+			<table align="center" cellpadding="10px">
 				<tr>
 					<td>User:</td>
 					<td><input type='text' name='username' id="username" onclick="checkJ()"></td>
@@ -31,7 +31,7 @@
 					<td><input type='password' name='password' /></td>
 				</tr>
 				<tr>
-					<td colspan='2' align="center"><input name="submit" type="submit"
+					<td style="padding-top: 20px;padding-left: 100px"  colspan='2' align="center"><input name="submit" type="submit"
 						value="submit" /></td>
 				</tr>
 			</table>

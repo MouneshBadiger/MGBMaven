@@ -8,7 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- 
+  <script src="<c:url value="/resources/jquery-1.11.3.min.js" />"></script>
+  <script src="<c:url value="/resources/jquery-ui.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Payment</title>
 <script type="text/javascript">
@@ -19,6 +20,15 @@ function deleteEntry(id){
 	if(confirm("Are you sure to delete the record")){
 		window.location.href = "cancelMonthPayment?boId="+id;
 	}
+}
+function calculateOnAmount(){
+	$.ajax({
+		  url: "http://localhost:8080/SpringMavenFinal/admin/calculateOnAmount?amountG="+$('#amountG').val(),
+		  success: function(resp){
+		    $('#partialId').html(resp.split('_')[0]);
+		    $('#pendingTillMonth').val(resp.split('_')[1]);
+		  }
+		});
 }
 </script>
 </head>
@@ -49,7 +59,7 @@ function deleteEntry(id){
 <c:if test="${paymentDto.totalAmountPending!=0}">
 <tr>
 <td>Pay From</td>
-<td><s:select path="pendingFromMonth">
+<td><s:select path="pendingFromMonth" disabled="true">
 <s:options items="${paymentDto.pendingFromMonthMap}"/>
 </s:select> 
 </td>
@@ -62,9 +72,22 @@ function deleteEntry(id){
 </td>
 
 </tr>
+<!-- <tr>
+<td>Partial Amount</td>
+<td>
+<div id="partialId"></div>
+</td>
+
+</tr>
 <tr>
-<td  align="center"><input type="submit" value="Add Payment"> </td>
-<td  align="center"><input type="button" onclick="goBack()" value="Close"> </td>
+<td>Amount given</td>
+<td>
+<input type="text" id="amountG" onchange="calculateOnAmount()">
+</td>
+</tr> -->
+<tr>
+<td style="padding-top: 20px;" align="center"><input type="submit" value="Add Payment"> </td>
+<td style="padding-top: 20px;"  align="center"><input type="button" onclick="goBack()" value="Close"> </td>
 </tr>
 </c:if>
 <c:if test="${paymentDto.totalAmountPending==0}">
