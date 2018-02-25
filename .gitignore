@@ -4,5 +4,5 @@
 .settings
 .classpath
 .metadata
-.class
+*.class
 .recommenders
