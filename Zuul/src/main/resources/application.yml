@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zuuldemo  # Identify this application
+    
+server:
+  port: 8085
+
+zuul:
+  routes:
+     web-service:
+      path: /*
+      serviceId: web-service
+      stripPrefix: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/  
